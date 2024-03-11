@@ -1,5 +1,6 @@
 import React from 'react'
 import menuItems from '../../../../constants/sidebar/menuItems'
+import MenuLink from "@/constants/sidebar/menuLink/menuLink";
 function Sidebar() {
     return (
         <div>
@@ -9,8 +10,7 @@ function Sidebar() {
                         <span>{cat.title}</span>
                         {cat.list.map((item) => (
                             <div key={item.title}>
-                                <span>{item.icon}</span>
-                                <span>{item.title}</span>
+                                <MenuLink item={item} key={item.title} />
                             </div>
                         ))}
                     </li>
