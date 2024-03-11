@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import menuItems from '../../../../constants/sidebar/menuItems'
-import MenuLink from "@/constants/sidebar/menuLink/menuLink";
+import MenuLink from "@/app/ui/dashboard/sidebar/menuLink/menuLink";
 import styles from "./sidebar.module.css"
 import {MdLogout} from "react-icons/md";
 function Sidebar() {
