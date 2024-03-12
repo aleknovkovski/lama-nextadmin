@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "@/app/ui/dashboard/dashboard.module.css"
 import Card from "@/app/ui/dashboard/card/card";
+import Transactions from "@/app/ui/dashboard/transactions/transactions";
 
 function Dashboard() {
     return (
@@ -11,7 +12,7 @@ function Dashboard() {
                     <Card />
                     <Card />
                 </div>
-                Transactions
+                <Transactions />
                 Chart
             </div>
             <div className={styles.side}>
