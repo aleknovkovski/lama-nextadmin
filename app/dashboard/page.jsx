@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "@/app/ui/dashboard/dashboard.module.css"
 import Card from "@/app/ui/dashboard/card/card";
 import Transactions from "@/app/ui/dashboard/transactions/transactions";
+import Chart from "@/app/ui/dashboard/chart/chart";
 
 function Dashboard() {
     return (
@@ -13,7 +14,7 @@ function Dashboard() {
                     <Card />
                 </div>
                 <Transactions />
-                Chart
+                <Chart />
             </div>
             <div className={styles.side}>
                 Rightbar
