@@ -1,13 +1,15 @@
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Pagination from "@/app/ui/dashboard/pagination/pagination";
+import Search from "@/app/ui/dashboard/search/search";
 
 const UsersPage = async () => {
 
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <input placeholder="Search for a user..."></input>
+        <Search />
         <Link href="/dashboard/users/add">
           <button className={styles.addButton}>Add New</button>
         </Link>
@@ -57,7 +59,7 @@ const UsersPage = async () => {
           </tr>
         </tbody>
       </table>
-        {/*<Pagination/>*/}
+        <Pagination/>
     </div>
   );
 };
