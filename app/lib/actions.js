@@ -73,7 +73,7 @@ export const addProduct = async (formData) => {
     Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    connectToDatabase();
 
     const newProduct = new Product({
       title,
@@ -129,7 +129,7 @@ export const deleteUser = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    connectToDatabase();
     await User.findByIdAndDelete(id);
   } catch (err) {
     console.log(err);
@@ -143,7 +143,7 @@ export const deleteProduct = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    connectToDatabase();
     await Product.findByIdAndDelete(id);
   } catch (err) {
     console.log(err);
