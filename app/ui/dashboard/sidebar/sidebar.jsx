@@ -4,7 +4,7 @@ import menuItems from '../../../../constants/sidebar/menuItems'
 import MenuLink from "@/app/ui/dashboard/sidebar/menuLink/menuLink";
 import styles from "./sidebar.module.css"
 import {MdLogout} from "react-icons/md";
-import {auth} from "@/app/auth";
+import {auth, signOut} from "@/app/auth";
 async function Sidebar() {
     const { user } = await auth();
     console.log({user})
@@ -20,7 +20,7 @@ async function Sidebar() {
                 />
                 <div className={styles.userDetail}>
                     <span className={styles.username}>{user.username}</span>
-                    <span className={styles.userTitle}>{user.isAdmin ? "Administrator" : "User"}</span>
+                    <span className={styles.userTitle}>{"Administrator"}</span>
                 </div>
             </div>
             <ul className={styles.list}>
@@ -35,10 +35,17 @@ async function Sidebar() {
                     </li>
                 ))}
             </ul>
-            <button className={styles.logout}>
-                <MdLogout/>
-                Logout
-            </button>
+            <form
+                action={async () => {
+                    "use server";
+                    await signOut();
+                }}
+            >
+                <button className={styles.logout}>
+                    <MdLogout/>
+                    Logout
+                </button>
+            </form>
         </div>
     )
 }
